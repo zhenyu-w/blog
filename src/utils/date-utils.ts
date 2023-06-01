@@ -1,8 +1,8 @@
 import dayjs, { OpUnitType, QUnitType } from 'dayjs';
-import { merge } from 'lodash-es';
+// import { merge } from 'lodash-es';
 import zhCN from 'dayjs/locale/zh-cn';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { PlainObject } from '@/bean/base';
+// import { PlainObject } from '@/bean/base';
 
 export function init(): void {
     dayjs.locale(zhCN);
@@ -31,18 +31,18 @@ export function getTime(date = new Date()): number {
     return dayjs(date).toDate().getTime();
 }
 
-interface DayjsAddOption extends PlainObject {
+/* interface DayjsAddOption extends PlainObject {
     offset: number;
     unit: OpUnitType;
     format: string;
-}
+} */
 
 /**
  * 根据指定日期和选项获取另一个日期
  * @param {String|Date} date 指定日期
  * @param {Object} options 选项，options.offset大于0则获得更大的日期，否则获取更小的日期，options.unit是时间单位，默认是天('d')，options.format是输出的时间格式
  */
-export function getDateByOffset(date = new Date(), options: DayjsAddOption): string {
+/* export function getDateByOffset(date = new Date(), options: DayjsAddOption): string {
     const defaultOptions: DayjsAddOption = {
         offset: 0,
         unit: 'd',
@@ -51,7 +51,7 @@ export function getDateByOffset(date = new Date(), options: DayjsAddOption): str
     const mergedOptions = merge(defaultOptions, options) as DayjsAddOption;
     const targetDate = dayjs(date).add(mergedOptions.offset, mergedOptions.unit);
     return targetDate.format(mergedOptions.format);
-}
+} */
 
 /**
  * 获取两个日期间隔

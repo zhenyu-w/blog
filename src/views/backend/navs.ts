@@ -4,11 +4,10 @@
 
 import { BookOutlined, MessageOutlined, CommentOutlined } from '@ant-design/icons-vue';
 import { TreeNode } from '@/bean/base';
-import { ComponentInternalInstance } from 'vue';
 
 export interface NavItem extends TreeNode {
     key: string;
-    icon?: ComponentInternalInstance;
+    icon?: string;
     title: string;
     parentKeys?: string[];
 }
@@ -16,7 +15,7 @@ export interface NavItem extends TreeNode {
 export const navs: NavItem[] = [
     {
         key: 'sub1',
-        icon: BookOutlined,
+        icon: BookOutlined.name,
         title: '文章管理',
         children: [
             {
@@ -33,7 +32,7 @@ export const navs: NavItem[] = [
     },
     {
         key: 'sub2',
-        icon: MessageOutlined,
+        icon: MessageOutlined.name,
         title: '留言管理',
         children: [
             {
@@ -55,7 +54,7 @@ export const navs: NavItem[] = [
     },
     {
         key: 'sub3',
-        icon: CommentOutlined,
+        icon: CommentOutlined.name,
         title: '评论管理',
         children: [
             {

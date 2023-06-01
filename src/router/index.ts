@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw, createWebHashHistory } from 'vue-router';
 import { frontendRoute } from './frontend';
 import { backendRoute } from './backend';
 import { FALLBACK_ROUTE, NOT_FOUND_ROUTE } from './not-found';

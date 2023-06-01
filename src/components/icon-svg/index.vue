@@ -1,5 +1,5 @@
 <template>
-    <icon-font class="icon-svg" :type="iconType" :style="styleObject"></icon-font>
+    <icon-font class="icon-svg" :type="iconType" :style="styleObj"></icon-font>
 </template>
 <script setup lang="ts" name="IconSvg">
     import { createFromIconfontCN } from '@ant-design/icons-vue';
@@ -11,6 +11,11 @@
     const IconFont = createFromIconfontCN({
         scriptUrl: '//at.alicdn.com/t/font_1570300_zwupv8bc2lp.js'
     });
+
+    interface styleAttr {
+        fontSize?: number;
+        color: string;
+    }
 
     const props = defineProps({
         icon: {
@@ -27,10 +32,16 @@
         }
     });
     const iconType = computed(() => `${iconPrefix}${props.icon || fallbackIcon}`);
-    const styleObject = {
-        fontSize: props.size !== 0 ? `${props.size}` : null,
-        color: props.color
-    };
+
+    const styleObj = computed(() => {
+        let obj: styleAttr = {
+            color: props.color
+        };
+        if (props.size !== 0) {
+            obj.fontSize = props.size;
+        }
+        return obj;
+    });
 </script>
 <style scoped lang="less">
     .icon-svg {

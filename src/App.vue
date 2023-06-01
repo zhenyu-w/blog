@@ -22,7 +22,7 @@
         height: 100%;
     }
     .hidden-x {
-        overflow-x: hidden;
+        overflow: hidden;
     }
     .is-admin {
         height: 100%;

@@ -5,11 +5,7 @@
                 <a-timeline-item v-for="article in articleList" :key="article.id" color="#2b82a8">
                     <router-link :to="`/article/${article.id}`">
                         <a-card class="timeline-card">
-                            <zh-img
-                                :src="article.poster"
-                                class="timeline-card__poster"
-                                fit="cover"
-                            />
+                            <zh-img :src="article.poster" class="timeline-card__poster" />
                             <div class="timeline-card__info">
                                 <time>{{ article.formattedCreateTime }}</time>
                                 <h4 class="ellipsis" :title="article.article_name">{{
@@ -100,6 +96,9 @@
     :deep(.timeline-card) {
         border: 0;
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+        > img {
+            object-fit: cover;
+        }
         .ant-card-body {
             display: flex;
             padding: 10px;

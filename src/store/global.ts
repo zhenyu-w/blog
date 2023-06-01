@@ -36,7 +36,12 @@ export const useGlobalStore = defineStore('globalStore', {
     actions: {
         setIsMenuVisible(payload: boolean) {
             this.isMenuVisible = payload;
-            // 这里要设置body的overflow？
+            // 展示侧边栏时，取消body的滚动条
+            if (payload) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         },
         setCommontUserInfo(payload: CommentUserInfo) {
             if (payload) {

@@ -1,6 +1,6 @@
 <template>
     <div class="article__poster">
-        <img v-lazyload="imgSrc" class="img__inner" :style="{ objectFit: fit }" />
+        <img v-lazyload="imgSrc" class="img__inner" />
     </div>
 </template>
 <script setup lang="ts" name="ZhImag">
@@ -9,10 +9,6 @@
         imgSrc: {
             type: String,
             default: avatarFallback
-        },
-        fit: {
-            type: String,
-            default: 'cover'
         }
     });
 </script>

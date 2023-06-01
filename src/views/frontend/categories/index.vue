@@ -17,7 +17,6 @@
                         <a-badge class="block" :count="category.category_count">
                             <div class="category__card">
                                 <zh-img
-                                    fit="contain"
                                     :img-src="category.poster || defaultCategoryPoster"
                                     class="category__poster"
                                 />
@@ -67,6 +66,9 @@
         margin-top: 20px;
         background-color: #fff;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+        > img {
+            object-fit: cover;
+        }
     }
     :deep(.category__poster) {
         width: 100%;

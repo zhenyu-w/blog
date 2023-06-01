@@ -9,10 +9,7 @@
         @animationend="onAnimationEnd"
     >
         <header class="base-layout__header">
-            <router-link to="/" class="logo-wrap">
-                <img src="@/assets/img/logo.png" />
-            </router-link>
-            <h3>前端blog</h3>
+            <h2>振宇的前端blog</h2>
             <div class="icons-wrapper">
                 <icon-svg
                     class="menu-toggle"
@@ -145,7 +142,7 @@
         }
     }
     .base-layout__main {
-        padding: 24px 24px 0;
+        padding: 24px;
     }
     .logo-wrap {
         display: inline-block;
