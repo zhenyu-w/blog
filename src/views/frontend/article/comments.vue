@@ -58,13 +58,13 @@
             >
         </div>
 
-        <!-- <a-modal v-model:visible="isEditUserInfoVisible" :footer="null">
+        <a-modal v-model:visible="isEditUserInfoVisible" :footer="null">
             <CommentUserInfo
                 :topic="topic"
                 @cancel="isEditUserInfoVisible = false"
                 @success="isEditUserInfoVisible = false"
             />
-        </a-modal> -->
+        </a-modal>
     </section>
 </template>
 <script setup lang="ts" name="Comment">
@@ -72,7 +72,7 @@
     import { useGlobalStore } from '@/store/global';
     import { message } from 'ant-design-vue';
     import DOMPurify from 'dompurify';
-    // import CommentUserInfo from './comment-user-info.vue';
+    import CommentUserInfo from './comment-user-info.vue';
     import { commentService } from '@/services/comment';
     import { CommentDTO } from '@/bean/dto';
     import CardComment from '@/components/card/card-comment.vue';
@@ -167,7 +167,9 @@
             message.warning('您还未输入任何内容！');
             return;
         }
+        console.log(content.value);
         const purifiedContent = DOMPurify.sanitize(content.value);
+        console.log(purifiedContent);
         if (!purifiedContent) {
             // 输入了非法的内容
             message.warning('您的输入内容无效，请重新输入合法内容！');

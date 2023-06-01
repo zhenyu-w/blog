@@ -267,6 +267,10 @@
         background-color: #fff;
         border-radius: 4px;
         box-shadow: 0 2px 26px rgb(7 17 27 / 12%);
+        .acomment__avatar {
+            width: 40px;
+            height: 40px;
+        }
     }
 
     :deep(.comment__avatar) {

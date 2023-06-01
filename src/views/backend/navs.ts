@@ -1,21 +1,21 @@
 /**
  * @description: 菜单配置
  */
-
+import { Component } from 'vue';
 import { BookOutlined, MessageOutlined, CommentOutlined } from '@ant-design/icons-vue';
 import { TreeNode } from '@/bean/base';
 
 export interface NavItem extends TreeNode {
     key: string;
-    icon?: string;
+    icon?: Component;
     title: string;
     parentKeys?: string[];
 }
 
-export const navs: NavItem[] = [
+export const navs = [
     {
         key: 'sub1',
-        icon: BookOutlined.name,
+        icon: BookOutlined,
         title: '文章管理',
         children: [
             {
@@ -32,7 +32,7 @@ export const navs: NavItem[] = [
     },
     {
         key: 'sub2',
-        icon: MessageOutlined.name,
+        icon: MessageOutlined,
         title: '留言管理',
         children: [
             {
@@ -54,7 +54,7 @@ export const navs: NavItem[] = [
     },
     {
         key: 'sub3',
-        icon: CommentOutlined.name,
+        icon: CommentOutlined,
         title: '评论管理',
         children: [
             {

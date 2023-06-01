@@ -10,7 +10,7 @@
         >
             <template #bodyCell="{ column, record }">
                 <template v-if="column.dataIndex === 'avatar'">
-                    <zh-img class="articlePoster" :img-src="record.avatar" />
+                    <zh-img class="comment-avatar" :img-src="record.avatar" />
                 </template>
                 <template v-else-if="column.dataIndex === 'create_time'">
                     {{ format(record.create_time) }}

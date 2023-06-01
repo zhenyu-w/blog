@@ -13,7 +13,7 @@
                     <RouterLink :to="`/article/${record.id}`">{{ record.article_name }}</RouterLink>
                 </template>
                 <template v-else-if="column.dataIndex === 'avatar'">
-                    <zh-img class="articlePoster" :img-src="record.avatar" />
+                    <zh-img class="comment-avatar" :img-src="record.avatar" />
                 </template>
                 <template v-else-if="column.dataIndex === 'approved'">
                     {{ approvedFormatter(record.approved) }}

@@ -7,6 +7,7 @@
                 :model="formModel"
                 :rules="rules"
                 :wrapper-col="{ span: 24 }"
+                :label-col="{ style: { width: '80px' } }"
                 label-align="right"
             >
                 <a-form-item>

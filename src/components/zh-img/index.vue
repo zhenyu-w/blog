@@ -16,8 +16,8 @@
     .article__poster {
         display: inline-block;
         overflow: hidden;
-        width: 100%;
-        height: 200px;
+        max-width: 100%;
+        max-height: 200px;
         transition: transform 0.2s ease-in-out;
         box-shadow: 0 0 6px rgba(109, 43, 43, 0.1), 10px 10px 100px rgba(112, 100, 212, 0.24);
         &:hover {

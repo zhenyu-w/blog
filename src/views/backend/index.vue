@@ -17,11 +17,11 @@
                 @click="onClickMenu"
             >
                 <a-sub-menu v-for="sub in navs" :key="sub.key">
+                    <template #icon>
+                        <component :is="sub.icon" />
+                    </template>
                     <template #title>
-                        <span>
-                            <component :is="sub.icon" />
-                            <span>{{ sub.title }}</span>
-                        </span>
+                        <span>{{ sub.title }}</span>
                     </template>
                     <template #default>
                         <a-menu-item v-for="child in sub.children" :key="child.key">{{
